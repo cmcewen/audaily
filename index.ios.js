@@ -11,40 +11,60 @@ import {
     StatusBar,
     Text,
     Image,
+    ScrollView,
+    Dimensions,
     View
 } from 'react-native';
+
+const card_margin = 40;
+const card_width = Dimensions.get('window').width - (card_margin) * 2
 
 // Status Bar
 class audaily extends Component {
     render() {
         return (
-            <View style={styles.container}>
-            <StatusBar
-            barStyle="light-content"
+        <View style={styles.container}>
+        <StatusBar
+        barStyle="light-content"
+        />
+        <View style={styles.header}>
+            <Text style={styles.title}>Audaily</Text>
+            <Image
+            source={require('./images/settingsIcon@2x.png')}
+            style={styles.settingsIcon}
             />
-            <View style={styles.header}>
-                <Text style={styles.title}>Audaily</Text>
-                <Image
-                source={require('./images/settingsIcon@2x.png')}
-                style={styles.settingsIcon}
-                />
+        </View>
+        <ScrollView
+        horizontal={true}
+        showsHorizontalScrollIndicator={false}
+        snapToInterval={card_width + card_margin*2}
+        decelerationRate={0}
+        snapToAlignment= 'start'
+        >
+            <View style={styles.card}>
+                <Text>Card 1</Text>
             </View>
             <View style={styles.card}>
+                <Text>Card 2</Text>
             </View>
+            <View style={styles.card}>
+                <Text>Hi Daiji</Text>
             </View>
+        </ScrollView>
+        </View>
         );
     }
 }
 
 // Styles
-const styles = StyleSheet.create({
+var styles = StyleSheet.create({
     container: {
         flex: 1,
         backgroundColor: '#2E2092',
         alignItems: 'center',
-        paddingHorizontal: 40
     },
     header: {
+        paddingHorizontal: 40,
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignSelf: 'stretch',
@@ -61,7 +81,9 @@ const styles = StyleSheet.create({
     },
     card: {
         marginTop: 16,
-        width: 295,
+        marginLeft: 40,
+        marginRight: 40,
+        width: card_width,
         height: 465,
         borderRadius: 4,
         backgroundColor: '#ffffff',
