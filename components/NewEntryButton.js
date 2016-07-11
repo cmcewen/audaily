@@ -10,10 +10,14 @@ class NewEntryButton extends Component {
 
     render() {
         return (
-            <TouchableHighlight onPress={this._onPressButton}>
+            <TouchableHighlight
+                style={{marginTop:83}}
+                underlayColor={'#ffffff'}
+                activeOpacity={0.6}
+                onPress={this._onPressButton}
+                >
                 <Image
                 source={require('../images/recordEntryButton@2x.png')}
-                style={styles.recordEntryButton}
                 />
             </TouchableHighlight>
         );

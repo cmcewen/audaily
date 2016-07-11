@@ -72,13 +72,10 @@ var styles = StyleSheet.create({
         lineHeight: 33,
         color: constants.colorPurpleDark
     },
-    recordEntryButton: {
-        top: 83
-    },
     descriptiveText: {
         fontSize: 13,
         color: constants.colorGrayLight,
-        top: 170
+        top: 85
     },
     listViewRow: {
         borderBottomWidth: 0.5,
