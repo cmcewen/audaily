@@ -17,7 +17,6 @@ class OldEntriesCard extends Component {
         return (
             <View style={[styles.card, styles.cardListView]}>
                 <ListView
-                    renderSeperator={true}
                     dataSource={this.state.dataSource}
                     renderRow={(rowData) => <View style={styles.listViewRow}><Text>{rowData}</Text></View>}
                     />
