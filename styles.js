@@ -11,14 +11,19 @@ const card_width = Dimensions.get('window').width - (card_margin) * 2
 
 // Classes
 const constants = {
-    purpleColor: '#2e2092'
+    colorPurple: '#2e2092',
+    colorPurpleDark: '#262533',
+    colorPurpleLight: '#7060E6',
+    colorRed: '#EB0D28',
+    colorGrayLight: '#A6A4B3',
+    colorGrayLightest: '#C8C7CC'
 };
 
 // IDs
 var styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: constants.purpleColor,
+        backgroundColor: constants.colorPurple,
         alignItems: 'center',
     },
     header: {
@@ -26,21 +31,24 @@ var styles = StyleSheet.create({
         justifyContent: 'space-between',
         flexDirection: 'row',
         alignSelf: 'stretch',
-        marginTop: 60,
+        marginTop: 55,
     },
     title: {
         fontSize: 17,
         fontWeight: 'bold',
-        color: '#7060E6',
+        color: constants.colorPurpleLight,
     },
     settingsIcon: {
         top: -12,
         left: 8
     },
     card: {
-        marginTop: 16,
+        flex: 1,
+        alignItems: 'center',
+        marginTop: 20,
         marginLeft: 40,
         marginRight: 40,
+        padding: 40,
         width: card_width,
         height: 465,
         borderRadius: 4,
@@ -52,6 +60,32 @@ var styles = StyleSheet.create({
             width: 0
         },
         shadowRadius: 6,
+    },
+    cardListView: {
+        paddingRight: 0,
+        paddingBottom: 0,
+        paddingTop: 0
+    },
+    newEntryDate: {
+        alignSelf: 'flex-start',
+        fontSize: 30,
+        lineHeight: 33,
+        color: constants.colorPurpleDark
+    },
+    recordEntryButton: {
+        top: 83
+    },
+    descriptiveText: {
+        fontSize: 13,
+        color: constants.colorGrayLight,
+        top: 170
+    },
+    listViewRow: {
+        borderBottomWidth: 0.5,
+        borderColor: constants.colorGrayLightest,
+        height: 44,
+        width: card_width,
+        paddingVertical: 12
     },
     scrollViewIndicators: {
         justifyContent: 'space-between',
@@ -69,6 +103,9 @@ var styles = StyleSheet.create({
     opacity: {
         opacity: 0.4
     },
+    bold: {
+        fontWeight: 'bold'
+    }
 });
 
 module.exports = styles
