@@ -5,7 +5,7 @@ const styles = require('../styles.js')
 
 class NewEntryButton extends Component {
     _onPressButton() {
-        console.log("You tapped yo");
+        console.log("You tapped record yo");
     }
 
     render() {
@@ -14,8 +14,7 @@ class NewEntryButton extends Component {
                 style={{marginTop:83}}
                 underlayColor={'#ffffff'}
                 activeOpacity={0.6}
-                onPress={this._onPressButton}
-                >
+                onPress={this._onPressButton}>
                 <Image
                 source={require('../images/recordEntryButton@2x.png')}
                 />
