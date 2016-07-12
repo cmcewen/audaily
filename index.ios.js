@@ -5,10 +5,13 @@
 */
 
 import React, { Component } from 'react';
-import { AppRegistry, StatusBar, Text, Image, ScrollView, Dimensions, View } from 'react-native';
+import { AppRegistry, StatusBar, Text, Image, ScrollView, Dimensions, View, TouchableHighlight } from 'react-native';
 
 import NewEntryCard from './components/NewEntryCard.js';
 import OldEntriesCard from './components/OldEntriesCard.js';
+import SettingsCard from './components/SettingsCard.js';
+import ScrollViewDots from './components/ScrollViewDots.js';
+import SettingsButton from './components/SettingsButton.js';
 
 const styles = require('./styles.js')
 
@@ -26,10 +29,7 @@ class audaily extends Component {
 
             <View style={styles.header}>
                 <Text style={styles.title}>Audaily</Text>
-                <Image
-                source={require('./images/settingsIcon@2x.png')}
-                style={styles.settingsIcon}
-                />
+                <SettingsButton></SettingsButton>
             </View>
 
             <ScrollView
@@ -43,10 +43,7 @@ class audaily extends Component {
                 <OldEntriesCard></OldEntriesCard>
             </ScrollView>
 
-            <View style={styles.scrollViewIndicators}>
-                <View style={styles.scrollViewIndicatorDots}></View>
-                <View style={[styles.scrollViewIndicatorDots, styles.opacity]}></View>
-            </View>
+            <ScrollViewDots></ScrollViewDots>
         </View>
         );
     }
