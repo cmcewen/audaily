@@ -1,26 +1,46 @@
 import React, { Component } from 'react';
-import { TouchableHighlight, Image } from 'react-native';
+import { TouchableHighlight, Image, View, Text } from 'react-native';
 
 const styles = require('../styles.js')
 
-class NewEntryButton extends Component {
-    _onPressButton() {
-        console.log("You tapped record yo");
-    }
+const on = require('../images/recordEntryButton@2x.png')
+const off = require('../images/recordingButton@2x.png')
 
-    render() {
-        return (
-            <TouchableHighlight
-                style={{marginTop:83}}
-                underlayColor={'#ffffff'}
-                activeOpacity={0.6}
-                onPress={this._onPressButton}>
-                <Image
-                source={require('../images/recordEntryButton@2x.png')}
-                />
-            </TouchableHighlight>
-        );
+class NewEntryButton extends Component {
+
+        constructor(props) {
+            super(props);
+            this.state = {
+                startRecording: false
+            }
+        }
+
+        displayRecording() {
+            const buttonStyle = this.state.startRecording ? off : on
+
+            return (
+                    <TouchableHighlight
+                        style={{marginTop:60}}
+                        underlayColor={'#fff'}
+                        activeOpacity={0.9}
+                        onPress={(value) => this.setState({ startRecording: value })}
+                        >
+                        <View>
+                            <Image
+                                source={buttonStyle}
+                                />
+                        </View>
+                    </TouchableHighlight>
+            )
+        }
+
+        render() {
+            return (
+                <View>
+                    { this.displayRecording() }
+                </View>
+            );
+        }
     }
-}
 
 module.exports = NewEntryButton;

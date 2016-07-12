@@ -75,7 +75,7 @@ var styles = StyleSheet.create({
     descriptiveText: {
         fontSize: 13,
         color: constants.colorGrayLight,
-        top: 85
+        top: 70
     },
     listViewRow: {
         borderBottomWidth: 0.5,
